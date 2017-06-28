@@ -1,0 +1,28 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title>Post News</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+
+	<ion-card>
+		<ion-card-header>
+			<b>Notification</b>
+		</ion-card-header>
+		<ion-card-content style="padding: 0">
+			<div *ngIf="image" class="note-image">
+				<img [src]="'data:image/jpeg;base64,' + image" />
+			</div>
+			<p style="padding: 10px">
+				<b>Location: </b>{{lat}}, {{long}}<br>
+				<b>Message: </b><br>{{item}}</p>
+		</ion-card-content>
+		<button ion-button default large (click)="sendNotification()" style="width: 99%; height: 5rem">Send</button>
+	</ion-card>
+	<ion-fab bottom right>
+		<!--<button ion-fab (click)="takeImage()"><ion-icon name="camera"></ion-icon></button>-->
+		<button ion-fab (click)="takeText()"><ion-icon name="text"></ion-icon></button>
+	</ion-fab>
+
+
+</ion-content>
